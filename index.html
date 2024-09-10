@@ -128,7 +128,7 @@
         };
 
         function chooseChat() {
-            Telegram.WebApp.switchInlineQuery('内容');
+            Telegram.WebApp.switchInlineQuery('内容',['users', 'bots', 'groups', 'channels']);
         };
 
         Telegram.WebApp.onEvent('chat_request', (data) => {
