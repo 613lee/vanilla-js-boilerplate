@@ -70,6 +70,7 @@
         <h1>Modals</h1>
         <button onclick="Telegram.WebApp.showAlert('Hello World!');">Launch Alert</button>
         <button onclick="showPopup();">Launch Popup</button>
+        <button onclick="requestChat();">选择会话</button>
 
         <h1>Links</h1>
         <ul>
@@ -125,6 +126,20 @@
                 }
             });
         };
+
+        function chooseChat() {
+            Telegram.WebApp.requestChat({
+                bot_id: 'pp_miniapp_test_bot',
+                chat_is_channel: false,
+                chat_is_group: true,
+                chat_is_supergroup: true,
+                chat_is_user: true,
+            });
+        };
+
+        Telegram.WebApp.onEvent('chat_request', (data) => {
+            console.log('Selected chat:', data);
+        });
 
         // Function to toggle main TWA button
         function toggleMainButton() {
