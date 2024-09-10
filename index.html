@@ -128,13 +128,7 @@
         };
 
         function chooseChat() {
-            Telegram.WebApp.requestChat({
-                bot_id: 7466572139,
-                chat_is_channel: false,
-                chat_is_group: true,
-                chat_is_supergroup: true,
-                chat_is_user: true,
-            });
+            Telegram.WebApp.switchInlineQuery('内容');
         };
 
         Telegram.WebApp.onEvent('chat_request', (data) => {
