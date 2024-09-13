@@ -73,6 +73,7 @@
         <button onclick="chooseChat();">选择会话</button>
         <button onclick="chooseGroup();">选择群组</button>
         <button onclick="chooseChannel();">选择频道</button>
+        <button onclick="withdraw();">提现</button>
 
 <!--        <h1>Links</h1>-->
 <!--        <ul>-->
@@ -137,6 +138,10 @@
         };
         function chooseChannel() {
             Telegram.WebApp.openTelegramLink('https://t.me/pp_miniapp_test_bot?startchannel\u0026admin=change_info+delete_messages+restrict_members+invite_users+pin_messages+post_messages+edit_messages');
+        };
+
+        function withdraw() {
+            Telegram.WebApp.openTelegramLink('https://t.me/ppwalletbot?start=withdraw')
         };
 
         Telegram.WebApp.onEvent('chat_request', (data) => {
